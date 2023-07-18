@@ -33,5 +33,9 @@ public class NutritionFacts {
                 .servingSize(100)
                 .servings(10)
                 .build();
-    }
+
+        System.out.println(nutritionFacts.servingSize);
+        System.out.println(nutritionFacts.servings);
+        System.out.println(nutritionFacts.calories);
+       }
 }
