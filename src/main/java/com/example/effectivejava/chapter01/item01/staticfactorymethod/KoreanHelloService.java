@@ -5,5 +5,4 @@ public class KoreanHelloService implements HelloService {
     public String hello() {
         return "안녕";
     }
-
 }
