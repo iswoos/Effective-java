@@ -1,4 +1,4 @@
-package com.example.effectivejava.chapter01.item05.staticutils;
+package com.example.effectivejava.chapter01.item05.dependencyinjection;
 
 import com.example.effectivejava.chapter01.item05.DefaultDictionary;
 import com.example.effectivejava.chapter01.item05.Dictionary;
@@ -7,16 +7,18 @@ import java.util.List;
 
 public class SpellChecker {
 
-    private static final Dictionary dictionary = new DefaultDictionary();
+    private final Dictionary dictionary;
 
-    private SpellChecker() {}
+    public SpellChecker(Dictionary dictionary) {
+        this.dictionary = dictionary;
+    }
 
-    public static boolean isValid(String word) {
+    public boolean isValid(String word) {
         // TODO 여기 SpellChecker 코드
         return dictionary.contains(word);
     }
 
-    public static List<String> suggestions(String typo) {
+    public List<String> suggestions(String typo) {
         // TODO 여기 SpellChecker 코드
         return dictionary.closeWordsTo(typo);
     }
